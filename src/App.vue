@@ -41,6 +41,7 @@ function salvarPreco(){
     <label>preço</label>
     <input type="text" v-model="preco">
     <button @click="salvarPreco()">salvar</button>
+    <button></button>
     
   </div>
 </div> 
