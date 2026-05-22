@@ -1,4 +1,5 @@
 <script setup>
+import produtoCard from '@/components/produtoCard.vue';
 import { ref } from 'vue';
 import { listaProdutos } from '@/data/produtos';
 import { formataPreco } from '@/utils/produtoUtils';
@@ -12,15 +13,11 @@ produtos.value = produtos.value.filter(p => p.categoria === 'Alimentos')
 
     <h1>alimentos</h1>
     <div class="produtos">
-        <div v-for="p in produtos" :key="p.id" class="produto-card">
-            <img :src="p.imagem" :alt="p.nome" class="produto-imagem">
-            <h2>{{ p.nome }}</h2>
-            <p>preço:{{ formataPreco(p.preco) }}</p>
-        </div>
+      <produtoCard v-for="p in produtos" :key="p.id" :id="p.id" :nome="p.nome" :preco="p.preco" :categoria="p.categoria" :imagem="p.imagem"/>
     </div>
 </div>
 </template>
 
 <style scoped>
 
-</style>
+</style>    
